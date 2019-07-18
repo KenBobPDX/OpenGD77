@@ -42,7 +42,6 @@ static bool currentBandWidth = BANDWIDTH_12P5KHZ;
 static int currentFrequency =1440000;
 static int currentCC =1;
 static uint8_t squelch = 0x00;
-static const uint8_t SQUELCH_SETTINGS[] = {45,45,45};
 static bool rxCTCSSactive = false;
 
 int	trxGetMode()
@@ -100,7 +99,7 @@ void trx_check_analog_squelch()
 		uint8_t RX_noise;
 		read_I2C_reg_2byte(I2C_MASTER_SLAVE_ADDR_7BIT, 0x1b,&RX_signal,&RX_noise);
 
-		if ((RX_noise < SQUELCH_SETTINGS[0]) || (open_squelch))
+		if ((RX_noise < nonVolatileSettings.squelch) || (open_squelch))
 		{
 			GPIO_PinWrite(GPIO_LEDgreen, Pin_LEDgreen, 1);
 			if(!rxCTCSSactive || (rxCTCSSactive & trxCheckCTCSSFlag())|| open_squelch)
