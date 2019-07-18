@@ -27,7 +27,7 @@
 
 void fw_main_task();
 
-const char *FIRMWARE_VERSION_STRING = "V0.2.4";
+const char *FIRMWARE_VERSION_STRING = "V0.3";
 TaskHandle_t fwMainTaskHandle;
 
 void fw_init()
