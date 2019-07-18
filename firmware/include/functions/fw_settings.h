@@ -43,6 +43,7 @@ typedef struct settingsStruct
 	struct_codeplugChannel_t vfoChannel;
 	uint32_t		overrideTG;
 	uint8_t			useCalibration;
+	uint8_t			squelch;
 } settingsStruct_t;
 
 extern settingsStruct_t nonVolatileSettings;
