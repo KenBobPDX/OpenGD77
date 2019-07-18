@@ -267,10 +267,12 @@ static void handleEvent(int buttons, int keys, int events)
 		{
 			if (trxGetMode() == RADIO_MODE_ANALOG)
 			{
+				channelScreenChannelData.chMode = RADIO_MODE_DIGITAL;
 				trxSetMode(RADIO_MODE_DIGITAL);
 			}
 			else
 			{
+				channelScreenChannelData.chMode = RADIO_MODE_ANALOG;
 				trxSetMode(RADIO_MODE_ANALOG);
 				trxSetTxCTCSS(currentChannelData->rxTone);
 			}
