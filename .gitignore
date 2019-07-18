@@ -1,0 +1,8 @@
+/firmware/.settings
+/firmware/Debug
+/firmware/Release
+/firmware/*.launch
+/firmware/linkerdata/*.dat
+/ComTool/.vs
+/ComTool/ComTool/bin
+/ComTool/ComTool/obj
