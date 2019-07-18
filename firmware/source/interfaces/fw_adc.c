@@ -24,6 +24,10 @@ volatile uint32_t adc0_dp1;
 volatile uint32_t adc0_dp2;
 volatile uint32_t adc0_dp3;
 
+const int CUTOFF_VOLTAGE_UPPER_HYST = 64;
+const int CUTOFF_VOLTAGE_LOWER_HYST = 62;
+const int BATTERY_MAX_VOLTAGE = 83;
+
 void trigger_adc()
 {
     adc16_channel_config_t adc16ChannelConfigStruct;
