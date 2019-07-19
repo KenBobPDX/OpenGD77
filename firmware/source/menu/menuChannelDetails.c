@@ -309,7 +309,7 @@ static void handleEvent(int buttons, int keys, int events)
 			else if ((keys & KEY_GREEN)!=0)
 			{
 				memcpy(currentChannelData,&tmpChannel,sizeof(struct_codeplugChannel_t));
-				menuSystemPopPreviousMenu();
+				menuSystemPopAllAndDisplayRootMenu();
 				return;
 			}
 			else if ((keys & KEY_RED)!=0)
