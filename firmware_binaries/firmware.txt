@@ -1,6 +1,9 @@
 Changelog
 =========
 
+V0.3.1 (OpenGD77 Phase 1 - Update 1):
+<work in progress>
+
 V0.3 (OpenGD77 Phase 1):
 - Additional stuff by Roger Clark, VK3KYY / G4KYF:
   - Added battery percentage display to VFO and Channel screens and made changes elsewhere to support this, including menuBattery.c.
