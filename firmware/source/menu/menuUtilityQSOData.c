@@ -351,4 +351,15 @@ void menuUtilityRenderHeader()
 	}
 
 	UC1701_printAt(0,8, buffer,UC1701_FONT_6X8);
+	int  batteryPerentage = (int)(((battery_voltage - CUTOFF_VOLTAGE_UPPER_HYST) * 100) / (BATTERY_MAX_VOLTAGE - CUTOFF_VOLTAGE_UPPER_HYST));
+	if (batteryPerentage>100)
+	{
+		batteryPerentage=100;
+	}
+	if (batteryPerentage<0)
+	{
+		batteryPerentage=0;
+	}
+	sprintf(buffer,"%d%%",batteryPerentage);
+	UC1701_printCore(0,8,buffer,UC1701_FONT_6X8,2,false);// Display battery percentage at the right
 }

@@ -24,8 +24,9 @@
 
 #include "fsl_adc16.h"
 
-#define CUTOFF_VOLTAGE_UPPER_HYST 64
-#define CUTOFF_VOLTAGE_LOWER_HYST 62
+extern const int CUTOFF_VOLTAGE_UPPER_HYST;
+extern const int CUTOFF_VOLTAGE_LOWER_HYST;
+extern const int BATTERY_MAX_VOLTAGE;
 
 extern volatile uint32_t adc_channel;
 extern volatile uint32_t adc0_dp0;

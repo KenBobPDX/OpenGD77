@@ -1,6 +1,13 @@
 Changelog
 =========
 
+V0.3 (OpenGD77 Phase 1):
+- Additional stuff by Roger Clark, VK3KYY / G4KYF:
+  - Added battery percentage display to VFO and Channel screens and made changes elsewhere to support this, including menuBattery.c.
+  - Add squelch to the nonVolatileSettings and use it in fw_trx.c.
+  - Fix bug where mode changes, via the star button, on both the Channel and VFO screen are reverted after the end of the next transmission.
+  - Improve menu system by returning to the home screen in most screens when the green button is pressed.
+
 -----------------------------------
 Moved to https://github.com/hamdv/OpenGD77 !!!
 -----------------------------------

@@ -45,8 +45,7 @@ int menuBattery(int buttons, int keys, int events, bool isFirstRun)
 
 static void updateScreen()
 {
-	const int BATTERY_MIN_VOLTAGE = 7;
-	const float BATTERY_MAX_VOLTAGE = 8.4;
+	const int MAX_BATTERY_BAR_HEIGHT = 50;
 	char buffer[8];
 
 	UC1701_clearBuf();
@@ -57,11 +56,11 @@ static void updateScreen()
 
 	sprintf(buffer,"%d.%dV", val1,val2);
 	UC1701_printAt(24,16, buffer,UC1701_FONT_16x32);
-	uint32_t h = (uint32_t)(((battery_voltage - BATTERY_MIN_VOLTAGE) * 50)/(BATTERY_MAX_VOLTAGE-BATTERY_MIN_VOLTAGE));
+	uint32_t h = (uint32_t)(((battery_voltage - CUTOFF_VOLTAGE_UPPER_HYST) * MAX_BATTERY_BAR_HEIGHT) / (BATTERY_MAX_VOLTAGE - CUTOFF_VOLTAGE_UPPER_HYST));
 
-	if (h>50)
+	if (h>MAX_BATTERY_BAR_HEIGHT)
 	{
-		h=50;
+		h=MAX_BATTERY_BAR_HEIGHT;
 	}
 	// draw frame
 	UC1701_fillRect(100,10,24,52,false);
@@ -86,4 +85,11 @@ static void handleEvent(int buttons, int keys, int events)
 		menuSystemPopPreviousMenu();
 		return;
 	}
+	else if ((keys & KEY_GREEN)!=0)
+	{
+		menuSystemPopAllAndDisplayRootMenu();
+		return;
+	}
+
+
 }
