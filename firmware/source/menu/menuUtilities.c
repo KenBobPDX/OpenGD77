@@ -196,7 +196,7 @@ static void handleEvent(int buttons, int keys, int events)
 		{
 			settingsRestoreDefaultSettings();
 		}
-		menuSystemPopPreviousMenu();
+		menuSystemPopAllAndDisplayRootMenu();
 		return;
 	}
 	else if ((keys & KEY_RED)!=0)

@@ -85,4 +85,11 @@ static void handleEvent(int buttons, int keys, int events)
 		menuSystemPopPreviousMenu();
 		return;
 	}
+	else if ((keys & KEY_GREEN)!=0)
+	{
+		menuSystemPopAllAndDisplayRootMenu();
+		return;
+	}
+
+
 }
