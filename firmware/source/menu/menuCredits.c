@@ -100,4 +100,9 @@ static void handleEvent(int buttons, int keys, int events)
 		}
 		updateScreen();
 	}
+	else if ((keys & KEY_GREEN)!=0)
+	{
+		menuSystemPopAllAndDisplayRootMenu();
+		return;
+	}
 }
